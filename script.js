@@ -10,7 +10,7 @@ console.log(num);
 console.log(typeof num);
 var num = undefined;
 console.log(num);
-console.log(typeof num);*/
+console.log(typeof num);
 var person = {
     name: "John",
     age: 30,
@@ -29,10 +29,34 @@ if(sym1 === sym2){
 }
 else{
     console.log("false");
-}
+}*/
 var a = 10;
 var b = 20;
 var linebreak = a + b;
 console.log(linebreak);
 document.write(linebreak);
-
+var a = 10;
+var b = 20;
+var linebreak = a - b;
+console.log(linebreak);
+document.write(linebreak);
+var a = 10;
+var b = 20;
+var linebreak = a = b;
+console.log(linebreak);
+document.write(linebreak);
+var a = 10;
+var b = 20;
+var linebreak = a * b;
+console.log(linebreak);
+document.write(linebreak);
+var a = 10;
+var b = 20;
+var linebreak = a % b;
+console.log(linebreak);
+document.write(linebreak);
+var a = 10;
+var b = 20;
+var linebreak = a / b;
+console.log(linebreak);
+document.write(linebreak);
