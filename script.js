@@ -30,3 +30,9 @@ if(sym1 === sym2){
 else{
     console.log("false");
 }
+var a = 10;
+var b = 20;
+var linebreak = a + b;
+console.log(linebreak);
+document.write(linebreak);
+
