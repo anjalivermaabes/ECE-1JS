@@ -60,3 +60,16 @@ var b = 20;
 var linebreak = a / b;
 console.log(linebreak);
 document.write(linebreak);
+//coditional statements
+//if(condition){
+    //code block to be executed if condition is true}
+    //else if(condition){
+        //code block to be executed if condition is true}
+        //else{
+            //code block to be executed if condition is false}
+//let age = 15;
+//if(age > 18){
+    //console.log("You are an adult");}
+    //else{
+        //console.log("You are a minor");
+    //}

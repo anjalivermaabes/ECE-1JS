@@ -1,3 +1,6 @@
+//Loops in javascript 
+//if.... , if...else  .... , if....else if.... , switch case 
+//for loop, while loop, do...while loop, for...in loop, for...of loop
 //let i;
 //for(let i = 0; i < 5; i++){
     //document.write(i + "<br>");
@@ -31,7 +34,7 @@
     //else{
         //console.log("You are a minor");
     //}
-    //let grade = 0;
+    let grade = 0;
 switch(grade)
 {
     case 90:
