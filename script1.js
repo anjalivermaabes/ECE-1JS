@@ -34,23 +34,32 @@
     //else{
         //console.log("You are a minor");
     //}
-    let grade = 0;
-switch(grade)
-{
-    case 90:
-        console.log("A");
-        break;
-    case 80:
-        console.log("B");
-        break;
-    case 70:
-        console.log("C");
-        break;
-    case 60:
-        console.log("D");
-        break;
-    default:
-        console.log("F");
+    //let grade = 0;
+//switch(grade)
+//{
+  //  case 90:
+    //    console.log("A");
+      //  break;
+    //case 80:
+      //  console.log("B");
+       // break;
+    //case 70:
+      //  console.log("C");
+        //break;
+    //case 60:
+      //  console.log("D");
+        //break;
+    //default:
+     
+    //console.log("F");
+//}
+//function
+function  myFunction(){
+  alert("Hello World");
 }
+function sayHello(name,age){
+    document.write(name + "is " + age + " years old.");
+}
+//Arrow function is an announonymous function which can be assigned to a variable
 
 
