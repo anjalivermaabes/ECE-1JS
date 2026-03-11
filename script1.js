@@ -73,3 +73,23 @@ const add1 = (a,b) => {
 }
 add1(5,10);
 
+let person ={
+    name: "Anita",
+    age: 30,
+    isMarried: false,
+    hobbies: ["reading", "traveling", "cooking"],
+    address: {
+        street: "123 lane streert",
+        city: "Gurgaon",
+        state: "Haryana",
+        country: "India"
+}
+};
+console.log(person);
+console.log(person.name);
+console.log(person.age);
+console.log(person.isMarried);
+console.log(person.hobbies);
+console.log(person.address);
+/*let person ={
+
