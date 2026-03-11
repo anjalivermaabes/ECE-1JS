@@ -62,4 +62,14 @@ function sayHello(name,age){
 }
 //Arrow function is an announonymous function which can be assigned to a variable
 
+//Normal Function 
+function add(a,b){
+    console.log(a + b);
+}
+add(5,10);
+//Arrow function
+const add1 = (a,b) => {
+    console.log(a + b);
+}
+add1(5,10);
 
