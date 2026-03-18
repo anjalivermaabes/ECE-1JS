@@ -13,3 +13,19 @@ myinfo2[3] = "Designer";
 console.log(myinfo);
 console.log(myinfo2);
 
+console.log(person);
+console.log(person.name)
+console.log(person.age);
+console.log(person.isMarried);
+console.log(person.hobbies);
+console.log(person.address);
+/*let person ={
+    name: "Anita",
+    age: 30,
+    isMarried: false,*/
+    
+    console.log(person);
+    console.log(person.name);
+    console.log(person.age);
+
+    
