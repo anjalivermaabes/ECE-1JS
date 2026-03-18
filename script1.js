@@ -91,5 +91,12 @@ console.log(person.age);
 console.log(person.isMarried);
 console.log(person.hobbies);
 console.log(person.address);
-/*let person ={
+/*let person =*/
+let person2 = New Object();
+//the iffernce between object and array is that an object is a collection of key value pairs and an array is a collection of values
+/*array is the ordered collection of data
+object is the collection of key value pairs
+array moves []
+object moves {}*/
+
 
