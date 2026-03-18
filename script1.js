@@ -98,5 +98,16 @@ let person2 = New Object();
 object is the collection of key value pairs
 array moves []
 object moves {}*/
-
+console.log(person2);
+person2.name = "Anita";
+person2.age = 30;
+person2.isMarried = false;
+person2.hobbies = ["reading", "traveling", "cooking"];
+person2.address = {
+    street: "123 lane streert",
+    city: "Gurgaon",
+    state: "Haryana",
+    country: "India"
+};
+console.log(person2);
 
