@@ -18,8 +18,15 @@
       --green:#007600;
     }
     *{box-sizing:border-box}
-    
- .header{
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* Header */
+    .header{
       background:var(--primary);
       color:#fff;
     }
@@ -31,7 +38,9 @@
       gap:16px;
       padding:10px 16px;
     }
-    x;
+    .logo{
+      display:flex; align-items:center; gap:8px;
+      color:#fff; text-decoration:none; font-weight:700; font-size:20px;
     }
     .logo .sm{font-weight:600; font-size:12px; opacity:.9}
     .deliver{
@@ -59,7 +68,20 @@
       display:flex; align-items:center; gap:6px; font-weight:700; font-size:14px;
     }
 
-    
+    /* Subnav */
+    .subnav{
+      background:var(--secondary);
+      color:#fff;
+    }
+    .subnav .row{
+      max-width:1400px;
+      margin:0 auto; display:flex; align-items:center; gap:18px; padding:8px 16px;
+      overflow-x:auto;
+    }
+    .subnav a{
+      color:#fff; text-decoration:none; white-space:nowrap; font-size:13px;
+    }
+
     /* Hero */
     .hero{
       max-width:1400px; margin:0 auto; padding:16px;
@@ -68,7 +90,11 @@
       background:url('https://images.unsplash.com/photo-1518443876315-3e23706e0c63?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
       height:360px; border-radius:12px; position:relative; overflow:hidden;
     }
-    
+    .hero-msg{
+      position:absolute; left:16px; bottom:16px;
+      background:#fff; padding:12px 16px; border-radius:8px; max-width:520px;
+      box-shadow:0 6px 16px rgba(0,0,0,.15);
+    }
     .hero-msg a{color:var(--link); text-decoration:none; font-weight:600}
 
     /* Product grid */
@@ -76,17 +102,50 @@
       max-width:1400px; margin:0 auto; padding:16px;
       display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;
     }
-   
-    
+    @media (max-width:1200px){ .grid{ grid-template-columns:repeat(3,1fr); } }
+    @media (max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px){ .grid{ grid-template-columns:1fr; } }
 
-    
+    .card{
+      background:var(--card); border-radius:12px; padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,.06);
+    }
+    .card h3{margin:0 0 10px; font-size:16px}
+    .card .images{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:8px;
+    }
+    .card .images img{
+      width:100%; height:120px; object-fit:cover; border-radius:8px; background:#f5f5f5;
+    }
+    .card .link{margin-top:10px}
+    .card .link a{color:var(--link); text-decoration:none; font-weight:600; font-size:14px}
+
+    /* Product tile */
+    .product{
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .product img{width:100%; height:180px; object-fit:cover; border-radius:10px; background:#f7f7f7}
+    .price{font-weight:700}
+    .rating{color:#ffa41c; font-size:14px}
+    .ship{color:var(--green); font-size:12px}
 
     /* Footer */
     .footer{
       margin-top:24px;
       background:var(--secondary); color:#fff;
     }
-    
+    .backtop{
+      background:#37475a; text-align:center; padding:14px; font-size:13px; cursor:pointer;
+    }
+    .footer .cols{
+      max-width:1400px; margin:0 auto; padding:24px 16px;
+      display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+    }
+    .footer h4{margin:0 0 10px; font-size:14px}
+    .footer a{display:block; color:#ddd; text-decoration:none; font-size:13px; margin:6px 0}
+    .footer .bottom{
+      border-top:1px solid #506070; padding:16px; text-align:center; font-size:12px; color:#ddd;
+    }
   </style>
 </head>
 <body>
@@ -98,12 +157,12 @@
         <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
           <path d="M12 2l4 7H8l4-7zm0 20l-4-7h8l-4 7z"/>
         </svg>
-        <span>amazn</span>
+        <span>amazon</span>
         <span class="sm">clone</span>
       </a>
 
       <div class="deliver">
-        Deliver to
+        Deliver to 
         <strong>Dadri, UP</strong>
       </div>
 
@@ -167,10 +226,10 @@
     <div class="card">
       <h3>Shop home essentials</h3>
       <div class="images">
-        <img src="https://images.unsplash.com/photo-1507426524542-69219fbd3e31?q=80&w=800&auto=format&fit=crop" alt="Cushions"/>
-        <img src="https://images.unsplash.com/photo-1519710164239-d6e1abfe2d0c?q=80&w=800&auto=format&fit=crop" alt="Lamp"/>
-        <img src="https://images.unsplash.com/photo-1484755560615-a4c64e97fe76?q=80&w=800&auto=format&fit=crop" alt="Cookware"/>
-        <img src="https://images.unsplash.com/photo-1528776796759-3f065f1a0d1d?q=80&w=800&auto=format&fit=crop" alt="Storage"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOY-NANvs2EH9HXRe7m8H6k6se9XrLEpOBmw&s" alt="Cushions"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzGwcIw9lf3G1T5U5y1jGnfjS6F0zoRqFR3A&s" alt="Home Decor"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjgpun6jWd-Nh8i_STnN8QQ_y0I_XJfNpGhA&s" alt="Cookware"/>
+        <img src="https://m.media-amazon.com/images/I/611ZT26wdES._AC_UF1000,1000_QL80_.jpg" alt="Assecerioes"/>
       </div>
       <div class="link"><a href="#">Explore home</a></div>
     </div>
@@ -200,9 +259,9 @@
     <div class="card">
       <h3>Deals of the day</h3>
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop" alt="Backpack"/>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUneOh8HNTA3lF_XK-5aKxbT_QGTxLOsRmuw&s" alt="Backpack"/>
         <div class="rating">★★★★☆</div>
-        <div class="price">₹1,199</div>
+        <div class="price">₹199</div>
         <div class="ship">Limited time deal</div>
         <a class="link" href="#">See all deals</a>
       </div>
