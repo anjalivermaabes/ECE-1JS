@@ -1,245 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amazon-style Homepage</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#e3e6e6;
-      --dark:#0f1111;
-      --text:#111;
-      --accent:#febd69;      /* Amazon search button color */
-      --primary:#131921;     /* Amazon header color */
-      --secondary:#232f3e;   /* Amazon subnav color */
-      --link:#007185;        /* Amazon link color */
-      --card:#fff;
-      --green:#007600;
-    }
-    *{box-sizing:border-box}
-    
- .header{
-      background:var(--primary);
-      color:#fff;
-    }
-    .topbar{
-      max-width:1400px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      gap:16px;
-      padding:10px 16px;
-    }
-    x;
-    }
-    .logo .sm{font-weight:600; font-size:12px; opacity:.9}
-    .deliver{
-      color:#ddd; font-size:12px; line-height:1.2;
-    }
-    .deliver strong{display:block; color:#fff; font-size:13px}
-    .search{
-      flex:1; display:flex; align-items:center; height:40px;
-      border-radius:8px; overflow:hidden; background:#fff;
-    }
-    .search select{
-      height:100%; border:none; background:#f3f3f3; padding:0 10px; font-size:13px;
-    }
-    .search input{
-      flex:1; border:none; padding:0 12px; font-size:14px; outline:none;
-    }
-    .search button{
-      height:100%; border:none; background:var(--accent); width:48px; cursor:pointer;
-    }
-    .account, .orders, .cart{
-      color:#fff; text-decoration:none; font-size:12px;
-    }
-    .account span, .orders span{display:block; font-size:14px; font-weight:700}
-    .cart{
-      display:flex; align-items:center; gap:6px; font-weight:700; font-size:14px;
-    }
-
-    
-    /* Hero */
-    .hero{
-      max-width:1400px; margin:0 auto; padding:16px;
-    }
-    .hero-banner{
-      background:url('https://images.unsplash.com/photo-1518443876315-3e23706e0c63?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
-      height:360px; border-radius:12px; position:relative; overflow:hidden;
-    }
-    
-    .hero-msg a{color:var(--link); text-decoration:none; font-weight:600}
-
-    /* Product grid */
-    .grid{
-      max-width:1400px; margin:0 auto; padding:16px;
-      display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;
-    }
-   
-    
-
-    
-
-    /* Footer */
-    .footer{
-      margin-top:24px;
-      background:var(--secondary); color:#fff;
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Manager</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="topbar">
-      <a class="logo" href="#">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-          <path d="M12 2l4 7H8l4-7zm0 20l-4-7h8l-4 7z"/>
-        </svg>
-        <span>amazn</span>
-        <span class="sm">clone</span>
-      </a>
+    <div class="container">
+        <h1>Employee Manager Dashboard</h1>
 
-      <div class="deliver">
-        Deliver to
-        <strong>Dadri, UP</strong>
-      </div>
+        <!-- Employee Form -->
+        <div class="form-box">
+            <h2>Add New Employee</h2>
 
-      <form class="search" onsubmit="event.preventDefault(); alert('Search: ' + this.q.value);">
-        <select aria-label="Search category">
-          <option>All</option>
-          <option>Electronics</option>
-          <option>Books</option>
-          <option>Fashion</option>
-          <option>Home & Kitchen</option>
-        </select>
-        <input name="q" type="text" placeholder="Search Amazon"/>
-        <button aria-label="Search">
-          🔍
-        </button>
-      </form>
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter Name">
 
-      <a class="account" href="#">
-        Hello, sign in
-        <span>Account & Lists</span>
-      </a>
-      <a class="orders" href="#">
-        Returns
-        <span>& Orders</span>
-      </a>
-      <a class="cart" href="#">
-        🛒 <span>Cart</span>
-      </a>
+            <label>Employee ID:</label>
+            <input type="text" id="empId" placeholder="Enter ID">
+
+            <label>Salary:</label>
+            <input type="number" id="salary" placeholder="Enter Salary">
+
+            <label>Department:</label>
+            <input type="text" id="department" placeholder="Enter Department">
+
+            <button onclick="addEmployee()">Add Employee</button>
+            <button onclick="clearForm()">Clear Form</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-box">
+            <h2>Operations</h2>
+            <button onclick="displayEmployees()">Show All Employees</button>
+            <button onclick="filterSalary()">High Salary (₹50,000+)</button>
+            <button onclick="totalSalary()">Calculate Total Salary</button>
+            <button onclick="averageSalary()">Calculate Average Salary</button>
+            <button onclick="countDepartment()">Department Count</button>
+        </div>
+
+        <!-- Department Search -->
+        <div class="department-box">
+            <h2>Search Department</h2>
+            <input type="text" id="deptSearch" placeholder="Enter Department Name">
+        </div>
+
+        <!-- Output -->
+        <div id="output" class="output-box">
+            <h2>Output</h2>
+        </div>
     </div>
 
-    <nav class="subnav">
-      <div class="row">
-        <a href="#">All</a>
-        <a href="#">MX Player</a>
-        <a href="#">Sell</a>
-        <a href="#">Best Sellers</a>
-        <a href="#">Mobiles</a>
-        <a href="#">Fashion</a>
-        <a href="#">Electronics</a>
-        <a href="#">Home</a>
-        <a href="#">Books</a>
-        <a href="#">Appliances</a>
-        <a href="#">Toys & Games</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-banner">
-      <div class="hero-msg">
-        <strong>You are on a demo Amazon-style page.</strong>
-        <div>Shop great deals and explore categories tailored for you.</div>
-        <div class="link"><a href="#">Click here to go to amazn.in</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Product grid -->
-  <main class="grid">
-    <div class="card">
-      <h3>Shop home essentials</h3>
-      <div class="images">
-        <img src="https://images.unsplash.com/photo-1507426524542-69219fbd3e31?q=80&w=800&auto=format&fit=crop" alt="Cushions"/>
-        <img src="https://images.unsplash.com/photo-1519710164239-d6e1abfe2d0c?q=80&w=800&auto=format&fit=crop" alt="Lamp"/>
-        <img src="https://images.unsplash.com/photo-1484755560615-a4c64e97fe76?q=80&w=800&auto=format&fit=crop" alt="Cookware"/>
-        <img src="https://images.unsplash.com/photo-1528776796759-3f065f1a0d1d?q=80&w=800&auto=format&fit=crop" alt="Storage"/>
-      </div>
-      <div class="link"><a href="#">Explore home</a></div>
-    </div>
-
-    <div class="card">
-      <h3>Electronics for you</h3>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop" alt="Smartphone"/>
-        <div class="rating">★★★★★</div>
-        <div class="price">₹29,999</div>
-        <div class="ship">FREE delivery</div>
-        <a class="link" href="#">Shop smartphones</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Keep shopping for</h3>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" alt="Headphones"/>
-        <div class="rating">★★★★☆</div>
-        <div class="price">₹2,499</div>
-        <div class="ship">FREE delivery</div>
-        <a class="link" href="#">Audio accessories</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Deals of the day</h3>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?q=80&w=1200&auto=format&fit=crop" alt="Backpack"/>
-        <div class="rating">★★★★☆</div>
-        <div class="price">₹1,199</div>
-        <div class="ship">Limited time deal</div>
-        <a class="link" href="#">See all deals</a>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="backtop" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to top</div>
-    <div class="cols">
-      <div>
-        <h4>Get to know us</h4>
-        <a href="#">About</a>
-        <a href="#">Careers</a>
-        <a href="#">Press Releases</a>
-      </div>
-      <div>
-        <h4>Connect with us</h4>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-      </div>
-      <div>
-        <h4>Make money with us</h4>
-        <a href="#">Sell on amazn</a>
-        <a href="#">Advertise</a>
-        <a href="#">Affiliate</a>
-      </div>
-      <div>
-        <h4>Let us help you</h4>
-        <a href="#">Your Account</a>
-        <a href="#">Returns Centre</a>
-        <a href="#">Help</a>
-      </div>
-    </div>
-    <div class="bottom">© 2025 amazn clone — Demo for educational purposes.</div>
-  </footer>
+    <script src="script.js"></script>
 
 </body>
 </html>
