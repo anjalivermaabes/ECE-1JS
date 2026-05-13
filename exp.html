@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationery Collection</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f6f9;
+            padding: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: #0a3d62;
+        }
+
+        /* GRID LAYOUT */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.03);
+        }
+
+        .product img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin-top: 12px;
+            font-size: 20px;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product button {
+            margin-top: 10px;
+            padding: 10px 16px;
+            background: #1e3799;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .product button:hover {
+            background: #0c2461;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Stationery Products</h1>
+
+    <div class="product-grid">
+
+        <!-- Pens -->
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/51EWeMiq8iL._AC_UF1000,1000_QL80_.jpg" alt="Pens">
+            <h3>Premium Ball Pens (Pack of 5)</h3>
+            <p>₹199</p>
+            <button>Add to Cart</button>
+            <button>Buy Now</button>
+        </div>
+
+        <!-- Notebooks -->
+        <div class="product">
+            <img src="https://rukminim3.flixcart.com/image/824/972/xif0q/diary-notebook/o/g/5/a4size-plain-spiral-notbook-5-notbook-in-set-200-pages-each-original-imah4zfekuay485j.jpeg?q=60&crop=false" alt="Notebooks">
+            <h3>Hardcover Spiral Notebook</h3>
+            <p>₹149</p>
+            <button>Add to Cart</button>
+            <button>Buy Now</button>
+        </div>
+
+        <!-- Colors -->
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/716FcwG7M7S.jpg" alt="Color Pencils">
+            <h3>Color Pencils Set (24 Shades)</h3>
+            <p>₹249</p>
+            <button>Add to Cart</button>
+            <button>Buy Now</button>
+        </div>
+
+        <!-- Geometry Box -->
+        <div class="product">
+            <img src="https://images-cdn.ubuy.co.in/651bf6d7e0ddb867d2319abc-8-pieces-math-geometry-kit-set-student.jpg" alt="Geometry Box">
+            <h3>Student Geometry Box</h3>
+            <p>₹120</p>
+            <button>Add to Cart</button>
+            <button>Buy Now</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
