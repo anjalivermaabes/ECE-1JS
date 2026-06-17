@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="navbar">
+
+            <div class="logo">
+                <h2>amazon<span>.in</span></h2>
+            </div>
+
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+                    <small>Delivering to Delhi</small>
+                    <h4>Update location</h4>
+                </div>
+            </div>
+
+            <div class="search-bar">
+
+                <select>
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Books</option>
+                </select>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search Amazon.in"
+                >
+
+                <button onclick="searchProducts()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+            <div class="language">
+                🇮🇳 EN
+            </div>
+
+            <div class="nav-item" id="accountBtn">
+                <small>Hello, Sign in</small>
+                <h4>Account & Lists</h4>
+            </div>
+
+            <div class="nav-item" id="ordersBtn">
+                <small>Returns</small>
+                <h4>& Orders</h4>
+            </div>
+
+            <div class="cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cartCount">0</span>
+            </div>
+
+        </div>
+
+        <!-- SUB NAV -->
+
+        <div class="subnav">
+
+            <a href="#"><i class="fa-solid fa-bars"></i> All</a>
+            <a href="#">Fresh</a>
+            <a href="#">MX Player</a>
+            <a href="#">Sell</a>
+            <a href="#">Bestsellers</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Mobiles</a>
+            <a href="#">Prime</a>
+            <a href="#">Fashion</a>
+            <a href="#">Electronics</a>
+            <a href="#">Home & Kitchen</a>
+
+        </div>
+
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <button class="slider-btn left">&#10094;</button>
+
+        <img
+            id="heroImage"
+            src="images/banner1.jpg"
+            alt="banner"
+        >
+
+        <button class="slider-btn right">&#10095;</button>
+
+    </section>
+
+    <!-- CATEGORY CARDS -->
+
+    <section class="category-grid">
+
+        <div class="category-card">
+            <h2>Appliances for your home</h2>
+
+            <img src="images/appliances.jpg" alt="">
+
+            <p>See more</p>
+        </div>
+
+        <div class="category-card">
+            <h2>Revamp your home</h2>
+
+            <img src="images/home.jpg" alt="">
+
+            <p>See more</p>
+        </div>
+
+        <div class="category-card">
+            <h2>Home essentials</h2>
+
+            <img src="images/essentials.jpg" alt="">
+
+            <p>See more</p>
+        </div>
+
+        <div class="category-card">
+            <h2>Deals on headphones</h2>
+
+            <img src="images/headphones.jpg" alt="">
+
+            <p>See more</p>
+        </div>
+
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products" id="productsContainer">
+
+        <div class="product">
+
+            <img src="images/laptop.jpg" alt="">
+
+            <h3>Laptop</h3>
+
+            <p class="price">₹59,999</p>
+
+            <button onclick="addToCart('Laptop')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div class="product">
+
+            <img src="images/watch.jpg" alt="">
+
+            <h3>Smart Watch</h3>
+
+            <p class="price">₹2,999</p>
+
+            <button onclick="addToCart('Smart Watch')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div class="product">
+
+            <img src="images/headphone.jpg" alt="">
+
+            <h3>Wireless Headphones</h3>
+
+            <p class="price">₹1,999</p>
+
+            <button onclick="addToCart('Headphones')">
+                Add to Cart
+            </button>
+
+        </div>
+
+        <div class="product">
+
+            <img src="images/mouse.jpg" alt="">
+
+            <h3>Gaming Mouse</h3>
+
+            <p class="price">₹999</p>
+
+            <button onclick="addToCart('Mouse')">
+                Add to Cart
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+                <h3>Get to Know Us</h3>
+
+                <a href="#">About Amazon</a>
+                <a href="#">Careers</a>
+                <a href="#">Press Releases</a>
+            </div>
+
+            <div>
+                <h3>Connect with Us</h3>
+
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+
+            <div>
+                <h3>Make Money with Us</h3>
+
+                <a href="#">Sell on Amazon</a>
+                <a href="#">Advertise Products</a>
+                <a href="#">Become an Affiliate</a>
+            </div>
+
+            <div>
+                <h3>Let Us Help You</h3>
+
+                <a href="#">Your Account</a>
+                <a href="#">Returns Centre</a>
+                <a href="#">Help</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <h2>amazon.in</h2>
+
+            <p>
+                © 1996-2026 Amazon Clone Project
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
